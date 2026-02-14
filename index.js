@@ -1,20 +1,23 @@
-const searchInput = document.querySelector('.search-input');
 const movieListEl = document.querySelector('.movie-list');
+const form = document.querySelector(".search-form");
+const searchInput = document.querySelector(".search-input");
 const posterViewEl = document.querySelector(".poster-view");
 
-// Listen for typing in the search bar
-searchInput.addEventListener('input', () => {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  posterViewEl.innerHTML = "";
+  movieListEl.innerHTML = ""; // optional: clear old results
+
   const query = searchInput.value.trim();
-  if (query.length > 2) {
-    searchMovies(query);
-  } else {
-    movieListEl.innerHTML = "";
+  if (query) {
+    fetchMovies(query);
   }
 });
 
+
 // Fetch movies based on search
-async function searchMovies(query) {
-  posterViewEl.innerHTML = "";
+async function fetchMovies(query) {
   const res = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=ccf21e06`);
   const data = await res.json();
 
@@ -27,6 +30,7 @@ async function searchMovies(query) {
     .map(movie => movieCardHTML(movie))
     .join("");
 }
+
 
 // Movie card component
 function movieCardHTML(movie) {

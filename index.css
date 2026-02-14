@@ -143,6 +143,30 @@ header {
   box-shadow: 0 0 6px rgba(0,0,0,0.15);
 }
 
+.search-form {
+  position: relative;
+  width: min(500px, 90%);
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 50px 12px 20px; /* extra right padding for button */
+}
+
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #af4081;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .movie-list {
   width: 100%;
   display: flex;
@@ -353,3 +377,26 @@ footer {
     gap: 12px;
   }
 }
+
+@media (max-width: 667px) {
+
+  /* Make the form scale smoothly */
+  .search-form {
+    width: 100%;
+  }
+
+  /* Input becomes slightly smaller and more compact */
+  .search-input {
+    font-size: 0.9rem;
+    padding: 10px 48px 10px 16px; /* leave room for button */
+  }
+
+  /* Mobile-friendly button */
+  .search-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    right: 8px;
+    border-radius: 6px;
+  }
+}
+
