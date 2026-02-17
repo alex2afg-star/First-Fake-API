@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <div class="modal hidden">
+  <div class="modal__content">
+    <button class="modal__close">&times;</button>
+  </div>
+</div>
     <img src="assets/565181f6b45c563cd51d8fde3f9568f3.jpg" class="body__background--image" alt="body background image">
   <section>
     <nav>
@@ -21,7 +26,7 @@
                 nav__link--anchor
                 link__hover-effect
                 link__hover-effect--black
-                ">Genre</a>
+                ">About</a>
             </id>
             <id class="nav__link">
                 <a href="#" class="
@@ -38,12 +43,40 @@
             </id>
         </ul>
     </nav>
+    <div class="search__container">
+     <div class="image__wrapper">
+      <img src="..." alt="">
+     </div> 
+  <form class="search-form">
+  <input type="text" class="search-input" placeholder="Your favorite movies and series here...">
+  <button type="submit" class="search-btn">🔍</button>
+</form>
+ <div class="poster-view"></div>
+ <div class="filter-bar hidden">
+  <select id="sortSelect">
+    <option value="">Sort by</option>
+    <option value="newest">Newest → Oldest</option>
+    <option value="oldest">Oldest → Newest</option>
+  </select>
+
+  <select id="typeSelect">
+    <option value="">Category</option>
+    <option value="movie">Movies</option>
+    <option value="series">Series</option>
+  </select>
+
+  <select id="alphaSelect"> 
+    <option value="">Title</option> 
+    <option value="az">A → Z</option> 
+    <option value="za">Z → A</option> 
+  </select>
+</div>
+
+  <div class="movie-list"></div>
+</div>
     <header>
+        <div class="header__row">
         <h1>Movie Library for your Binge Fringe 🎬</h1>
-        <figure class="image__wrapper">
-            <img src="./assets/undraw_movie-night_pkvp.svg" alt="Home page image">
-            </figure>
-            <div class="row">
         <div class="home__discription">
             <h1 class="home__discription--title">Discover Your Next Favorite Movie or Series</h1>
             <p class="home__discription--paragraph"><b>Unleash the power of our movie search engine to find your next binge-worthy series or movie. 
@@ -54,20 +87,8 @@
         </div>
     </header>
  </section>
-  <div class="search__container">
-  <div class="image__wrapper">
-    <img src="..." alt="">
-  </div> 
-  <form class="search-form">
-  <input type="text" class="search-input" placeholder="Browse your favorite movies and series...">
-  <button type="submit" class="search-btn">🔍</button>
-</form>
- <div class="poster-view"></div>
-  <div class="movie-list"></div>
-</div>
 
    <footer>
-        <img src="assets/565181f6b45c563cd51d8fde3f9568f3.jpg" class="footer__background--image">
         <div class="row footer__row">
         <a href="#" class="footer__anchor">
             <figure class="footer__logo">
@@ -96,11 +117,9 @@
             link__hover-effect--white
             " target="_blank" download>Contact Us</a>
         </div>
-        <div class="footer__copyright">Copyright © 2025 Alex Soto</div>
+        <div class="footer__copyright">Copyright © 2026 Alex Soto</div>
     </div>
  </footer>
  <script src="index.js"></script>
 </body>
-
-
 </html>
